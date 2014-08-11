@@ -1,8 +1,8 @@
 (function () {//Good habit to wrap application in a closure.
 	//variables
-	var app = angular.module('store', ['store-products']),
+	var app = angular.module('store', ['store-products']);
 	//controllers
-	app.controller('StoreController', [ '$http',function($http){
+	app.controller('StoreController', ['$http', function($http){
 		var store = this;
 
 		store.products = [];
