@@ -1,9 +1,45 @@
-<html>
+<!DOCTYPE html>
+<html ng-app="store">
 <head>
 	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
-	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="main.css">
+	<title>Welcome To the Gem Store</title>
 </head>
-<body>
-
+<body ng-controller="StoreController as store">
+	<h1 class="header">Welcome To the Gem Store</h1>
+	<div class="product-row" ng-repeat="product in store.products" ng-hide="store.product.soldOut">
+		<h1>{{product.name}}</h1>
+		<h2>{{product.price | currency}}</h2>
+		<section ng-controller="PanelController as panel">
+			<ul class="nav nav-pills">
+				<li ng-class="{active: panel.isSelected(1)}">
+					<a href="#description" ng-click="panel.selectTab(1)">Description</a>
+				</li>
+				<li ng-class="{active: panel.isSelected(2)}">
+					<a href="#specifications" ng-click="panel.selectTab(2)">Specifications</a>
+				</li>
+				<li ng-class="{active: panel.isSelected(3)}">
+					<a href="#reviews" ng-click="panel.selectTab(3)">Reviews</a>
+				</li>
+			</ul>
+			<div class="panel" ng-show="panel.isSelected(1)">
+				<h4>Description</h4>
+				<p>{{product.description}}</p>
+			</div>
+			<div class="panel" ng-show="panel.isSelected(2)">
+				<h4>Specifications</h4>
+				<p></p>
+			</div>
+			<div class="panel" ng-show="panel.isSelected(3)">
+				<h4>Review</h4>
+				<p></p>
+			</div>
+		</section>
+		<p>{{product.description}}</p>
+		<img class="product-image" ng-src="{{product.image}}">
+		<button ng-show="product.canPurchase">Add to Cart</button>
+	</div>
+	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+	<script type="text/javascript" src="app.js"></script>
 </body>
 </html>

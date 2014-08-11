@@ -1,0 +1,38 @@
+html {
+	width: 100%;
+}
+body {
+	width: 1000px;
+	margin: 0 auto;
+}
+.header {
+	text-align: center;
+	width: 100%;
+}
+.product-image {
+	width: 100px;
+}
+.product-row {
+	float: left;
+	width: 309px;
+	margin: 0px 10px;
+}
+.product-row h1, h2 {
+	text-align: center;
+}
+.product-row h2 {
+	color: #35BD76;
+}
+.product-row li {
+	background-color: #8DBEEC;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	-o-border-radius: 5px;
+}
+.product-row li a {
+	color: #ffffff;
+}
+.product-row li a:hover {
+	background-color: #1973C7;
+}
