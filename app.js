@@ -1,5 +1,5 @@
 (function () {//Good habit to wrap application in a closure.
-
+	//variables
 	var app = angular.module('store', [ ]),
 		gems = [
 		{ 
@@ -58,7 +58,7 @@
 			]
 		}
 	];
-
+	//controllers
 	app.controller('StoreController', function(){
 		this.products = gems;
 	});
@@ -78,6 +78,13 @@
 			this.review.createdOn = Date.now(); 
 			product.reviews.push(this.review);
 			this.review = {};
+		};
+	});
+	//directives
+	app.directive('productTitle', function(){
+		return {
+			restrict: 'E',
+			templateUrl: 'product-title.html'
 		};
 	});
 })();

@@ -8,7 +8,7 @@
 <body ng-controller="StoreController as store">
 	<h1 class="header">Welcome To the Gem Store</h1>
 	<div class="product-row" ng-repeat="product in store.products" ng-hide="store.product.soldOut">
-		<h1 ng-include="'product-title.html'">
+		<product-title></product-title>
 		</h1>
 		<section ng-controller="PanelController as panel">
 			<ul class="nav nav-pills">

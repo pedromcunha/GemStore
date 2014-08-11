@@ -32,8 +32,9 @@ textarea {
 .product-row h1, h2 {
 	text-align: center;
 }
-.product-row h5 {
+.product-row em {
 	color: #35BD76;
+	font-size: 15px;
 }
 .product-row li {
 	background-color: #8DBEEC;
