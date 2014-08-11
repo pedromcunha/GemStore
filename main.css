@@ -43,6 +43,10 @@ textarea {
 	-moz-border-radius: 5px;
 	-o-border-radius: 5px;
 }
+.product-row .specs-list {
+	background-color: #ffffff !important;
+	list-style-type: circle;
+}
 .product-row li a {
 	color: #ffffff;
 }

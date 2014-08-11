@@ -15,7 +15,13 @@
 					body: "Wow Such an amazing product.",
 					author: "happyCustomer@ranomail.com"
 				}
-			]
+			],
+			specs: {
+				Color: 'Red',
+				Rarity: 'Common',
+				Sharpness: 3,
+				Origin: 'Myanmar' 
+			}
 		},
 		{ 
 			name: 'Crystal',
@@ -35,7 +41,13 @@
 					body: "This is not a quality product!",
 					author: "madGuy@gmail.com"
 				}
-			]
+			],
+			specs: {
+				Color: 'Blue/Translucent',
+				Rarity: 'Rare',
+				Sharpness: 8,
+				Origin: 'Italy' 
+			}
 		},
 		{ 
 			name: 'Diamond',
@@ -55,7 +67,13 @@
 					body: "If I could I would rate this higher than 6!!",
 					author: "randy_orton@gmail.com"
 				}
-			]
+			],
+			specs: {
+				Color: 'Clear',
+				Rarity: 'Very Rare',
+				Sharpness: 10,
+				Origin: 'Southern Africa' 
+			}
 		}
 	];
 	//controllers
@@ -83,8 +101,14 @@
 	//directives
 	app.directive('productTitle', function(){
 		return {
-			restrict: 'E',
+			restrict: 'E', //or 'A' for attribute or element
 			templateUrl: 'product-title.html'
+		};
+	});
+	app.directive('productSpecifications', function() {
+		return {
+			restrict: 'A', //See, this one is for attributes
+			templateUrl: 'product-specifications.html'
 		};
 	});
 })();
