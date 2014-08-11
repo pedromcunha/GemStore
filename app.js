@@ -7,7 +7,7 @@
 
 		store.products = [];
 
-		$http.get('/products.json').success(function(data){
+		$http.get('https://www.dropbox.com/s/1e71r6jc5colar7/products.json').success(function(data){
 			store.products = data;
 		});
 	}]);
