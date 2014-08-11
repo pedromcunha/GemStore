@@ -1,85 +1,16 @@
 (function () {//Good habit to wrap application in a closure.
 	//variables
 	var app = angular.module('store', ['store-products']),
-		gems = [
-		{ 
-			name: 'Ruby',
-			price: 100.99,
-			description: 'Very red. The 99 cents is because of tax.',
-			canPurchase: true,
-			soldOut: true,
-			image: "https://cdn.tutsplus.com/net/uploads/legacy/966_essentialReading/images/rubylang.png",
-			reviews: [
-				{
-					stars: 5,
-					body: "Wow Such an amazing product.",
-					author: "happyCustomer@ranomail.com"
-				}
-			],
-			specs: {
-				Color: 'Red',
-				Rarity: 'Common',
-				Sharpness: 3,
-				Origin: 'Myanmar' 
-			}
-		},
-		{ 
-			name: 'Crystal',
-			price: 200,
-			description: 'Clear as Crystal',
-			canPurchase: true,
-			soldOut: true,
-			image: "http://img1.wikia.nocookie.net/__cb20111023030345/finalfantasy/images/b/b6/Dissidia_-_Bartz_Crystal.png",
-			reviews: [
-				{
-					stars: 5,
-					body: "This is an amazing product, very beautiful.",
-					author: "john@gmail.com"
-				},
-				{
-					stars: 2,
-					body: "This is not a quality product!",
-					author: "madGuy@gmail.com"
-				}
-			],
-			specs: {
-				Color: 'Blue/Translucent',
-				Rarity: 'Rare',
-				Sharpness: 8,
-				Origin: 'Italy' 
-			}
-		},
-		{ 
-			name: 'Diamond',
-			price: 500,
-			description: 'You better be saving up or else it turns to coal.',
-			canPurchase: true,
-			soldOut: true,
-			image: "http://www.adelerjewelers.com/wp-content/uploads/2012/08/diamond.png",
-			reviews: [
-				{
-					stars: 1,
-					body: "Terrible Product, what were they thinking. So expensive.",
-					author: "jeffmilligan@gmail.com"
-				},
-				{
-					stars: 5,
-					body: "If I could I would rate this higher than 6!!",
-					author: "randy_orton@gmail.com"
-				}
-			],
-			specs: {
-				Color: 'Clear',
-				Rarity: 'Very Rare',
-				Sharpness: 10,
-				Origin: 'Southern Africa' 
-			}
-		}
-	];
 	//controllers
-	app.controller('StoreController', function(){
-		this.products = gems;
-	});
+	app.controller('StoreController', [ '$http',function($http){
+		var store = this;
+
+		store.products = [];
+
+		$http.get('/products.json').success(function(data){
+			store.products = data;
+		});
+	}]);
 
 	app.controller('PanelController', function(){
 		this.tab = 1;
