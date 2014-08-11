@@ -115,7 +115,7 @@
 		return {
 			restrict: 'E',
 			templateUrl: 'product-panels.html',
-			controller: function(){
+			controller:function(){
 				this.tab = 1;
 				this.selectTab = function(setTab) {
 					this.tab = setTab;

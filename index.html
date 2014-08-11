@@ -9,10 +9,7 @@
 	<h1 class="header">Welcome To the Gem Store</h1>
 	<div class="product-row" ng-repeat="product in store.products" ng-hide="store.product.soldOut">
 		<product-title></product-title>
-		</h1>
-		<product-panels>
-
-		</product-panels> 
+		<product-panels></product-panels> 
 		<img class="product-image" ng-src="{{product.image}}">
 		<button class="btn" ng-show="product.canPurchase">Add to Cart</button>
 	</div>
