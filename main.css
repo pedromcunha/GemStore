@@ -1,5 +1,9 @@
+h1, h2, h3, h4, p, .btn, .footer {
+	font-family: 'Ubuntu', sans-serif;
+}
 html {
 	width: 100%;
+	background-color: #8DBEEC;
 }
 body {
 	width: 1000px;
@@ -20,6 +24,7 @@ textarea {
 .header {
 	text-align: center;
 	width: 100%;
+	background-color: #8DBEEC;
 }
 .product-image {
 	width: 100px;
@@ -29,15 +34,19 @@ textarea {
 	width: 309px;
 	margin: 0px 10px;
 }
-.product-row h1, h2 {
+.panel {
+	margin-top: 20px;
+}
+.product-row h1, h2, h4, p {
 	text-align: center;
 }
 .product-row em {
-	color: #35BD76;
+	color: #1973C7;
 	font-size: 15px;
+	font-weight: 700;
 }
 .product-row li {
-	background-color: #8DBEEC;
+	background-color: none;
 	border-radius: 5px;
 	-webkit-border-radius: 5px;
 	-moz-border-radius: 5px;
@@ -58,4 +67,25 @@ textarea {
 }
 .ng-valid.ng-dirty {
 	border-color: #78FA89;
+}
+.btn {
+	color: white;
+	background-color: #35BD76 !important;
+	-webkit-transition: background-color 0.5s ease;
+	-o-transition: background-color 0.5s ease;
+	-moz-transition: background-color 0.5s ease;
+}
+.btngreen:hover {
+	background-color: #ffffff !important;
+}
+.footer {
+	height: 250px;
+	width: 320px;
+	float: left;
+	clear: left;
+	background-image: url('http://aweebitirish.com/wp-content/uploads/2014/04/comic-speech-bubble.png');
+	background-size: 330px;
+	padding: 70px 0px 0px 44px;
+	margin-left: -110px;
+	font-weight: 700;
 }
