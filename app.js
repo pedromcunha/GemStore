@@ -1,4 +1,4 @@
-(function () {//Good habit to wrap application in a closure.
+(function () {//Wrap application in a closure.
 	//variables
 	var app = angular.module('store', ['store-products']);
 	//controllers
